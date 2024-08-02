@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion';
-import {HamburgerProps} from "../../types.d"
 
-const Hamburger = styled.div<{ isActive: boolean }> `
+
+
+const Hamburger = styled.div<{ isActive: boolean }>`
     width: 50px;
     height: 35px;
     border: 1px solid #70685b;
