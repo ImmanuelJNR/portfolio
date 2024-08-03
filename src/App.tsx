@@ -7,7 +7,7 @@ function App() {
   
 
   return (
-    <HashRouter basename="/portfolio/">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<Aboutme/>} />
