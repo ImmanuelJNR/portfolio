@@ -6,7 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 
 
-const Hamburger = styled.div<{ isActive: boolean }>`
+
+const Hamburger = styled.div<{ isActive: boolean }> `
     width: 50px;
     height: 35px;
     border: 1px solid #70685b;
@@ -56,6 +57,59 @@ const Navbar: FC = () => {
         setToggleMenu(prevState => !prevState)
     }
 
+      const menuVars = {
+        initial: {
+            scaleY: 0, 
+        },
+        animate: {
+            scaleY: 1,
+            transition:{
+                duration: 0.5,
+                ease: [0.12, 0, 0.39, 0]
+            }
+        }, 
+        exit: {
+            scaleY: 0,
+            transition:{
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1]
+            }
+        }
+    }
+
+    const mobileLinkVars = {
+        initial : {
+            y: "0",
+            transition: {
+                duration: 0.5,
+                ease: [0.37, 0, 0.63, 1]
+            }
+        },
+        open:{
+            y:0,
+            transition:{
+                duration: 0.7,
+                ease: [0, 0.55, 45, 1]
+            }
+        }
+    }
+
+    const containerVars = {
+        initial: {
+            transition:{
+                staggerChildren: 0.9,
+                
+            }
+        },
+        open: {
+            transition:{
+                staggerChildren: 0,
+
+            }
+        }
+    }
+    
+
 
     return (
         <>
@@ -81,33 +135,21 @@ const Navbar: FC = () => {
 
                 {toggleMenu && (
                     <motion.div 
-                        className="block md:hidden gap-5 mt-6"
-                        // initial={{ opacity: 0, y: -20 }} // Start with hidden state
-                        // animate={{ opacity: 1, y: 0 }}  // End with visible state
-                        // exit={{ opacity: 0, y: -20 }}   // Fade out and slide up
-                        transition={{ 
-                            duration: 0.5, 
-                            staggerChildren: 0.2  // Stagger the child animations by 0.2 seconds
-                        }}
+                        className="block md:hidden gap-5 mt-6 origin-top" 
+                        variants={menuVars}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+
                     >
-                        <motion.p className=" font-bodyFont  text-fontColor hover:text-black"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.5 }}
-                        ><a href="">Resume</a></motion.p>
-                        <motion.p className=" font-bodyFont  text-fontColor  hover:text-black"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.5 }}
-                        ><a href="">About Me</a></motion.p>
-                        <motion.p className=" font-bodyFont  text-fontColor  hover:text-black"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.5 }}
-                        ><a href="">Contact</a></motion.p>
+                      <motion.div 
+                        variants={containerVars}
+
+                      className="overflow-hidden">
+                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor hover:text-black" ><a href="">Resume</a></motion.p>
+                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1  text-fontColor  hover:text-black"><a href="">About Me</a></motion.p>
+                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor  hover:text-black"><a href="">Contact</a></motion.p>
+                      </motion.div>
                     </motion.div>
                 )}
                 </AnimatePresence>

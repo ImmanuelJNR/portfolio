@@ -11,7 +11,7 @@ const Aboutme: FC = () => {
                 <p className="dash-before text-fontColor mb-4 md:mb-0">ABOUT ME</p>
                 <div className=" flex flex-col-reverse justify-between md:flex-row ">
                     <div className="w-full md:w-[45%]">
-                        <p  className="text-fontColor font-bold text-2xl font-headerFont mt-6 mb-6">I am seasoned and passionate developer who uses code to solve real life problems</p>
+                        <p  className="text-fontColor font-bold text-2xl font-headerFont mt-6 mb-6">I am a seasoned frontend developer who is driven by purpose</p>
                         <p className=" text-fontColor font-bodyFont  font-light leading-8  text-base"> I am seasoned front-end developer who uses front-end tools to create and maintain functional and interactive user-friendly Web interfaces. Beyond the act of just writing codes, I strife to bring solutions to real life problems and making the world a better place through software development. I have 4+ years of experience in software development 
                         Throughout my career, I have had the privilege of collaborating with designers, Co-developers and expert of other  fields to develop products that serve users effectively and as well align with business objectives. I have also single handedly developed some projects from scratch to finish, which shows not just the ability to utilise my skills but also ensure self discipline to achieve certain goals even when not supervised.
                         Knowing that the tech industry is a fast growing industry, I read extensively and research daily to keep my self up to date with current trends in software development.

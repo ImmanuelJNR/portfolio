@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 // import { motion, useScroll } from 'framer-motion';
 // import { useEffect, useRef } from "react";
 
+import foodOrdering from ".././assets/Food ordering app 1.svg"
+import IP_tracker from ".././assets/IP tracker 1.svg"
+import CountriesProject from ".././assets/Where in the world 1.svg"
+
 
 const Firstsection = styled.div `
 margin: 10% 0;
@@ -48,35 +52,35 @@ const Home: FC = () => {
                     <p className="featured font-bodyFont pl-[10px] text-fontColor uppercase ">Featured Projects</p>
                 </div>
 
-                <div className="w-[90%] md:w-4/5 flex flex-col md:justify-between md:flex-row  h-fit mt-8 mb-8">
+                <div className="w-[90%] md:w-4/5 flex flex-col md:justify-between md:items-center md:flex-row  h-fit mt-8 mb-8">
                     <div className="w-full md:w-[45%]">
                         <p className=" font-headerFont  text-stroke text-fontColor text-6xl font-bold ">O1</p>
-                        <p className=" text-fontColor font-bold font-bodyFont mt-5 mb-5 text-3xl">Food Ordering App</p>
+                        <p className=" text-fontColor font-bold font-bodyFont  mt-5 mb-5 text-3xl">Food Ordering App</p>
                         <p className="  text-fontColor font-bodyFont  font-normal leading-8  text-base">
                         Food Ordering App is web app I built using React, TypeScript and JSON. It offers users a wide variety of meals available with price tags, and allows user to make a choice by adding to cart and make payment through paystack which is Integrated into the web app 
                         </p>
                         <p className="font-bold underline text text-fontColor font-bodyFont"><a href="https://immanueljnr.github.io/food-ordering-app/">Live link</a></p>
                     </div>
-                    <div>
-                        <img src="" alt="" />
+                    < div className="w-full  md:w-[45%]">
+                        <img src={foodOrdering} className="w-full" alt="" />
                     </div>
 
                 </div>
-                <div className="w-[90%] flex flex-col-reverse md:justify-between md:flex-row md:w-4/5 h-fit mt-8 mb-8">
+                <div className="w-[90%] flex flex-col-reverse md:items-center md:justify-between md:flex-row md:w-4/5 h-fit mt-8 mb-8">
                     <div className="w-full  md:w-[45%]">
-                        <img src="" alt="" />
+                        <img src={IP_tracker} className="w-full" alt="" />
                     </div>
                     <div className="w-full md:w-[45%]">
                         <p className=" font-headerFont  text-stroke text-fontColor text-6xl font-bold ">O2</p>
                         <p className=" text-fontColor font-bold font-bodyFont mt-5 mb-5  text-3xl">IP Address Tracker</p>
                         <p className="  text-fontColor font-bodyFont  font-normal leading-8  text-base">
-                        IP Address Tracker is web app I created from frontend mentor, using react, TypeScript leafletJS and API, the app shows public ip address of the user, the location, time Zone and the Internet service provider 
+                        IP Address Tracker is web app I created from frontend mentor, using react, TypeScript leafletJS and API, the app detects the public ip address of the user, the location, time Zone and the Internet service provider 
                         </p>
                         <p className="font-bold underline text text-fontColor font-bodyFont"><a href="https://immanueljnr.github.io/Ip-address-tracker/">Live link</a></p>
                     </div>   
 
                 </div>
-                <div className="w-[90%] md:w-4/5 flex justify-between flex-col md:justify-between  md:flex-row h-fit mt-8 mb-8">
+                <div className="w-[90%] md:w-4/5 flex justify-between flex-col md:items-center md:justify-between  md:flex-row h-fit mt-8 mb-8">
                     <div className="w-full md:w-[45%]">
                         <p className=" font-headerFont  text-stroke text-fontColor text-6xl font-bold ">O3</p>
                         <p className=" text-fontColor font-bold font-bodyFont mt-5 mb-5 text-3xl">Countries Info App</p>
@@ -86,7 +90,7 @@ const Home: FC = () => {
                         <p className="font-bold underline text text-fontColor font-bodyFont"><a href="https://immanueljnr.github.io/CountriesApp/">Live link</a></p>
                     </div>
                     <div className="w-full md:w-[45%]">
-                        <img src="" alt="" />
+                        <img src={CountriesProject} className="w-full" alt="" />
                     </div>
                 </div>
                 <PreFooter/>
