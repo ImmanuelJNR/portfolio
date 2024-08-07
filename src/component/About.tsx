@@ -2,7 +2,6 @@ import { FC } from "react"
 import Navbar from "./UI/navbar"
 import { Footer } from "./UI/footer"
 import ProfileImage from '.././assets/Frame 1.svg'
-import ProfileImage2 from '.././assets/Screenshot_20240720_224623_Photos.jpg'
 
 
 const Aboutme: FC = () => {
@@ -43,7 +42,7 @@ const Aboutme: FC = () => {
 
 
                     <div className="w-full md:w-[40%]">
-                        <img src={ProfileImage2} className="w-full" alt="" />
+                        <img src={ProfileImage} className="w-full" alt="" />
                     </div>
                 </div>
             </div>
