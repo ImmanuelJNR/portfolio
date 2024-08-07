@@ -3,11 +3,12 @@ import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion';
+import Resume from  "../../assets/ElijahEmmanuelResume.pdf"
 
 
 
 
-const Hamburger = styled.div<{ isActive: boolean }> `
+const Hamburger = styled.div<{ isActive: boolean }>`
     width: 50px;
     height: 35px;
     border: 1px solid #70685b;
@@ -115,7 +116,7 @@ const Navbar: FC = () => {
                     <p className="font-headerFont underline-before text-fontColor font-bold "><Link to="/">Elijah Emmanuel</Link></p>
                     
                     <div className="hidden md:flex  gap-5">
-                        <p className=" font-bodyFont text-fontColor hover:text-black"><a href="../../assets/Elijah Emmanuel - Resume (1).pdf" download>Resume</a></p>
+                        <p className=" font-bodyFont text-fontColor hover:text-black"><a href={Resume} download>Resume</a></p>
                         <p className=" font-bodyFont text-fontColor  hover:text-black"> <Link to="/about">About Me</Link> </p>
                         <p className=" font-bodyFont text-fontColor  hover:text-black "><a href="mailto: elijaheffiong088@gmail.com">Contact</a></p>
                     </div>
@@ -141,7 +142,7 @@ const Navbar: FC = () => {
                       <motion.div 
                     
                        className="overflow-hidden font-light text-xl">
-                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor hover:text-black" ><a href="../../assets/Elijah Emmanuel - Resume (1).pdf" download>Resume</a></motion.p>
+                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor hover:text-black" ><a href="../../assets/Elijah Emmanuel - Resume(1).pdf " download>Resume</a></motion.p>
                         <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1  text-fontColor  hover:text-black"><Link to="/about">About Me</Link></motion.p>
                         <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor  hover:text-black"><a href="mailto: elijaheffiong088@gmail.com">Contact</a></motion.p>
                       </motion.div>
