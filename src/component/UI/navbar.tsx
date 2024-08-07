@@ -18,7 +18,7 @@ const Hamburger = styled.div<{ isActive: boolean }> `
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    transition: transform 0.3s;
+     transition: transform 0.5s, opacity 0.3s; // Added opacity transition
     transform-origin: center; 
     // gap: 5px;
 
@@ -26,6 +26,7 @@ const Hamburger = styled.div<{ isActive: boolean }> `
         width: 100%;
         height: 2px;
         background: #70685b;
+        transition: transform 0.3s, opacity 0.3s; // Transition for each dash
         
         // margin: 4px 0;
     }
@@ -57,58 +58,53 @@ const Navbar: FC = () => {
         setToggleMenu(prevState => !prevState)
     }
 
-      const menuVars = {
-        initial: {
-            scaleY: 0, 
-        },
-        animate: {
-            scaleY: 1,
-            transition:{
-                duration: 0.5,
-                ease: [0.12, 0, 0.39, 0]
-            }
-        }, 
-        exit: {
-            scaleY: 0,
-            transition:{
-                duration: 0.5,
-                ease: [0.22, 1, 0.36, 1]
-            }
-        }
-    }
+     
+    
+
+
 
     const mobileLinkVars = {
-        initial : {
-            y: "0",
+        initial: {
+            opacity: 0,
+            y: 20, // Start from below
             transition: {
                 duration: 0.5,
-                ease: [0.37, 0, 0.63, 1]
-            }
+            },
         },
-        open:{
-            y:0,
-            transition:{
-                duration: 0.7,
-                ease: [0, 0.55, 45, 1]
-            }
-        }
-    }
+        animate: {
+            opacity: 1,
+            y: 0, // Move to the original position
+            transition: {
+                duration: 0.5,
+                ease: [0, 0.55, 0.45, 1],
+            },
+        },
+        exit: {
+            opacity: 0,
+            y: 20, // Move down
+            transition: {
+                duration: 0.3,
+                ease: [0.37, 0, 0.63, 1],
+            },
+        },
+    };
 
     const containerVars = {
-        initial: {
-            transition:{
-                staggerChildren: 0.9,
-                
-            }
+        initial: {},
+        animate: {
+            transition: {
+                staggerChildren: 0.3, // Stagger children on entrance
+                delayChildren: 0.1, // Optional: delay before starting stagger
+            },
         },
-        open: {
-            transition:{
-                staggerChildren: 0,
+        exit: {
+            transition: {
+                staggerChildren: 0.3, // Stagger children on exit
+                staggerDirection: -1, // Stagger in reverse order
+            },
+        },
+    };
 
-            }
-        }
-    }
-    
 
 
     return (
@@ -119,7 +115,7 @@ const Navbar: FC = () => {
                     <p className="font-headerFont underline-before text-fontColor font-bold "><Link to="/">Elijah Emmanuel</Link></p>
                     
                     <div className="hidden md:flex  gap-5">
-                        <p className=" font-bodyFont text-fontColor hover:text-black"><a href="">Resume</a></p>
+                        <p className=" font-bodyFont text-fontColor hover:text-black"><a href="../../assets/Elijah Emmanuel - Resume (1).pdf" download>Resume</a></p>
                         <p className=" font-bodyFont text-fontColor  hover:text-black"> <Link to="/about">About Me</Link> </p>
                         <p className=" font-bodyFont text-fontColor  hover:text-black "><a href="mailto: elijaheffiong088@gmail.com">Contact</a></p>
                     </div>
@@ -136,19 +132,18 @@ const Navbar: FC = () => {
                 {toggleMenu && (
                     <motion.div 
                         className="block md:hidden gap-5 mt-6 origin-top" 
-                        variants={menuVars}
+                        variants={containerVars}
                         initial="initial"
                         animate="animate"
                         exit="exit"
 
                     >
                       <motion.div 
-                        variants={containerVars}
-
-                      className="overflow-hidden">
-                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor hover:text-black" ><a href="">Resume</a></motion.p>
-                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1  text-fontColor  hover:text-black"><a href="">About Me</a></motion.p>
-                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor  hover:text-black"><a href="">Contact</a></motion.p>
+                    
+                       className="overflow-hidden font-light text-xl">
+                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor hover:text-black" ><a href="../../assets/Elijah Emmanuel - Resume (1).pdf" download>Resume</a></motion.p>
+                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1  text-fontColor  hover:text-black"><Link to="/about">About Me</Link></motion.p>
+                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor  hover:text-black"><a href="mailto: elijaheffiong088@gmail.com">Contact</a></motion.p>
                       </motion.div>
                     </motion.div>
                 )}
