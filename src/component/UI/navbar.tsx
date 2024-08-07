@@ -142,7 +142,7 @@ const Navbar: FC = () => {
                       <motion.div 
                     
                        className="overflow-hidden font-light text-xl">
-                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor hover:text-black" ><a href="../../assets/Elijah Emmanuel - Resume(1).pdf " download>Resume</a></motion.p>
+                        <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor hover:text-black" ><a href={Resume} download>Resume</a></motion.p>
                         <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1  text-fontColor  hover:text-black"><Link to="/about">About Me</Link></motion.p>
                         <motion.p variants={mobileLinkVars} className=" font-bodyFont pt-1 pb-1 text-fontColor  hover:text-black"><a href="mailto: elijaheffiong088@gmail.com">Contact</a></motion.p>
                       </motion.div>
