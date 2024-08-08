@@ -30,7 +30,7 @@ const Home: FC = () => {
                         <p className="dash-before mb-[24px] font-bodyFont text-fontColor uppercase ">hello</p>
                         <h1 className="font-headerFont mb-4 text-fontColor text-5xl font-bold ">I'm Elijah Emmanuel</h1>
                         <p className="font-bodyFont text-xl text-fontColor font-light leading-8 ">
-                         I am seasoned frontend developer who uses software programming tools to create and maintain functional and interactive user-friendly web interface. Beyond the act of just writing codes, I strive to innovate solutions to real life problems and make the world a better place through software development
+                         I am seasoned frontend developer who uses software programming tools to create and maintain functional and interactive user-friendly web interface. Beyond just writing codes, I strive to innovate solutions to real life problems and make the world a better place through software development
                         </p>
                     </div>
                     <Link to="/about">
