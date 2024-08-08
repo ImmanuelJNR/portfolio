@@ -7,30 +7,19 @@ import reactIcon from "../../assets/icons8-react-native-250.svg"
 import Git from "../../assets/icons8-git-250.svg"
 import Sass from "../../assets/icons8-sass-250.svg"
 import typeScript from "../../assets/icons8-typescript-250.svg"
-import Nextjs from "../../assets/icons8-next.js-250.svg"
+// import Nextjs from "../../assets/icons8-next.js-250.svg"
+import tailwind from "../../assets/icons8-tailwind-css.svg"
 import css from "../../assets/icons8-css3-250.svg"
-import { motion} from 'framer-motion';
-import { fadeIn } from "../../animation/variant";
 
 export const PreFooter: FC = () =>{
     return(
         <>
         <div className=" flex flex-col w-[90%]  md:w-4/5 mt-10 mb-10">
-            <motion.p 
-             variants={fadeIn('up', 0.2)}
-             initial='hidden'
-             whileInView={'show'}
-             viewport={{once: false, amount: 0.7}}
-            className="font-headerFont mb-4 text-fontColor text-left text-3xl font-bold ">My skills</motion.p>
-            {/* <div className="w-[40%]">
-                <p className=" font-bodyFont  text-fontColor">My skill are tools that I used developing solutions, they are not what makes me a developer, it is my ability to use them effectively that makes me a developer</p>
-            </div> */}
+            <p 
+            className="font-headerFont mb-4 text-fontColor text-left text-3xl font-bold ">My skills</p>
+            
 
-            <motion.div 
-             variants={fadeIn('left', 0.4)}
-             initial='hidden'
-             whileInView={'show'}
-             viewport={{once: false, amount: 0.7}}
+            <div 
             className=" flex flex-wrap gap-5  justify-around md:flex-nowrap">
                 <div className="flex flex-col items-center font-bodyFont  md:w-[100px] w-[3.5rem]   text-fontColor">
                 <img src={htmlIcon} className=" w-[100%] h-auto" alt="" />
@@ -61,10 +50,10 @@ export const PreFooter: FC = () =>{
                 <p>TypeScript</p>
                 </div>
                 <div className="flex flex-col items-center font-bodyFont  md:w-[100px] w-[3.5rem]  text-fontColor">
-                <img src={Nextjs} className="w-[100%] h-auto" alt="" />
-                <p>Nextjs</p>
+                <img src={tailwind} className="w-[100%] h-auto" alt="" />
+                <p>Tailwind css</p>
                 </div>
-            </motion.div>
+            </div>
         </div>
         </>
     )
